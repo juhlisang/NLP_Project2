@@ -3,6 +3,7 @@
 ## Academic and Data Sources
 
 - https://www.kaggle.com/datasets/vivekchary/sentiment-with-16-million-tweets-with-locations
+- Hutto, C.J. & Gilbert, E.E. (2014). VADER: A Parsimonious Rule-based Model for Sentiment Analysis of Social Media Text. Eighth International Conference on Weblogs and Social Media (ICWSM-14). Ann Arbor, MI, June 2014.
 
 ## Code Sources
 
