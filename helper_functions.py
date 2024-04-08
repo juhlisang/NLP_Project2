@@ -87,10 +87,10 @@ def averageSentimentByLocation_hf(location, data):
     test = dataset[int(0.8*len(dataset)):]
     specific_model = pipeline(model="finiteautomata/bertweet-base-sentiment-analysis")
     # note: model can only take 204 or 128 items in dataset, so only using test
-    data = [text for text, sentiment in test]
+    hf_test = test[:128]
+    data = [text for text, sentiment in hf_test]
     results = specific_model(data)
 
-    print(results)
     total_sentiment = 0
     for r in results:
         label = r['label'].lower()
@@ -98,7 +98,7 @@ def averageSentimentByLocation_hf(location, data):
             total_sentiment += 4
         if label == 'neu':
             total_sentiment += 2
-    average_sentiment = total_sentiment/len(dataset)
+    average_sentiment = total_sentiment/len(hf_test)
     return average_sentiment
 
 def plot_grouped_bar(locations, actual_sentiments, predicted_sentiments, model):
